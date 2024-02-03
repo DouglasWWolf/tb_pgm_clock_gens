@@ -1,5 +1,6 @@
 module si570_programmer #
 (
+    parameter CLOCK_FREQ   = 200000000,
     parameter AXI_I2C_BASE = 32'h0000_0000,
     parameter SI_570_ADDR  = 7'h4B
 )
@@ -115,26 +116,36 @@ reg [SMSW-1  :0] fsm_state;
 reg [SMSW*4-1:0] fsm_stack;
 
 // Important states of the state machine
-localparam FSM_IDLE            = 0;
-localparam FSM_BEGIN           = 1;
-localparam FSM_WRITE_SI570     = 20;
-localparam FSM_READ_SI570      = 30;
+localparam FSM_IDLE      = 0;
+localparam FSM_BEGIN     = 1;
+localparam FSM_WRITE_I2C = 20;
+localparam FSM_READ_I2C  = 30;
 
+//=============================================================================
+// These register are input and output parameters for the FSM_WRITE_I2C and
+// FSM_READ_I2C subroutines
+//=============================================================================
 
-// TX and RX data to/from the Si-570
+// TX and RX data to/from the I2C device
 reg[31:0] tx_data, rx_data;
 
-// Si-570 register number
+// I2C device register number
 reg[ 8:0] reg_num;
 
-// Number of bytes to read/write to/from the Si-570
+// Number of bytes to read/write to/from the I2C device
 reg[ 2:0] byte_count;
+//=============================================================================
+
+reg[31:0] delay;
 
 always @(posedge clk) begin
 
     trigger1 <= 0;
     trigger2 <= 0;
     trigger3 <= 0;
+
+    // This is a count-down timer
+    if (delay) delay <= delay -1;
 
     // These strobe high for a single cycle at a time
     AMCI_WRITE    <= 0;
@@ -184,32 +195,39 @@ always @(posedge clk) begin
                 tx_data    <= 1;  /* Recall NVM to RAM */
                 byte_count <= 1;
                 fsm_stack  <= (fsm_stack << SMSW) | (fsm_state + 1);  // push return addr
-                fsm_state  <= FSM_WRITE_SI570;  // Call subroutine
+                fsm_state  <= FSM_WRITE_I2C;  // Call subroutine
+            end
+
+        // Pause for a tenth of a second while the Si-570 resets
+        FSM_BEGIN + 4:
+            begin
+                delay     <= CLOCK_FREQ / 100;
+                fsm_state <= fsm_state + 1;
             end
 
         // Read the first four bytes of the freq config registers
-        FSM_BEGIN + 4:
-            begin
+        FSM_BEGIN + 5:
+            if (delay == 0) begin
                 reg_num    <= SI570_FREQ_CFG;
                 byte_count <= 4;
                 fsm_stack  <= (fsm_stack << SMSW) | (fsm_state + 1);  // push return addr
-                fsm_state  <= FSM_READ_SI570;  // Call subroutine
+                fsm_state  <= FSM_READ_I2C;  // Call subroutine
             end
 
         // Save the four bytes of configuration we just read and
         // go fetch the remaining two bytes of freq config data.
-        FSM_BEGIN + 5:
+        FSM_BEGIN + 6:
             begin
                 orig_si570_config[47:16] <= rx_data;
                 reg_num    <= SI570_FREQ_CFG + 4;
                 byte_count <= 2;
                 fsm_stack  <= (fsm_stack << SMSW) | (fsm_state + 1);  // push return addr
-                fsm_state  <= FSM_READ_SI570;  // Call subroutine
+                fsm_state  <= FSM_READ_I2C;  // Call subroutine
             end
 
         // Save the two bytes of config we just read and compute
         // the new values of the configuration registers
-        FSM_BEGIN + 6:
+        FSM_BEGIN + 7:
             begin
                 orig_si570_config[15:0] <= rx_data;
                 compute_start           <= 1;
@@ -220,7 +238,7 @@ always @(posedge clk) begin
                 /// ****************** REMOVE THIS !!!!!!!!!!!!!!!!!!!!!!!!!
             end
 
-        FSM_BEGIN + 7:
+        FSM_BEGIN + 8:
             begin
                 trigger1 <= 1;
                 fsm_state <= FSM_IDLE;
@@ -240,7 +258,7 @@ always @(posedge clk) begin
         //---------------------------------------------------------------------
 
         // Tell the I2C controller what device register to write to
-        FSM_WRITE_SI570:
+        FSM_WRITE_I2C:
             if (AMCI_WIDLE) begin
                 AMCI_WADDR <= AXI_I2C_BASE + CREG_REG_NUM;
                 AMCI_WDATA <= reg_num;
@@ -249,7 +267,7 @@ always @(posedge clk) begin
             end
 
         // Tell the I2C controller what data to write
-        FSM_WRITE_SI570 + 1:
+        FSM_WRITE_I2C + 1:
             if (AMCI_WIDLE) begin
                 AMCI_WADDR <= AXI_I2C_BASE + CREG_TX_DATA;
                 AMCI_WDATA <= tx_data;
@@ -258,7 +276,7 @@ always @(posedge clk) begin
             end
 
         // Tell the I2C controller to write N bytes of data to the device
-        FSM_WRITE_SI570 + 2:
+        FSM_WRITE_I2C + 2:
             if (AMCI_WIDLE) begin
                 AMCI_WADDR <= AXI_I2C_BASE + CREG_WRITE_LEN;
                 AMCI_WDATA <= byte_count;
@@ -267,14 +285,14 @@ always @(posedge clk) begin
             end
 
         // Wait for the I2C controller to start processing our request
-        FSM_WRITE_SI570 + 3:
+        FSM_WRITE_I2C + 3:
             if (AMCI_WIDLE && ~i2c_engine_idle)
                 fsm_state <= fsm_state + 1;
 
         // Now wait for the I2C controller to complete our request.  When it
         // does, read the status register of the I2C controller to find out
         // if our I2C transmit request worked.
-        FSM_WRITE_SI570 + 4:
+        FSM_WRITE_I2C + 4:
             if (i2c_engine_idle) begin
                 AMCI_RADDR <= AXI_I2C_BASE + SREG_I2C_STATUS;
                 AMCI_READ  <= 1;
@@ -284,7 +302,7 @@ always @(posedge clk) begin
         // When that read completes, we'll have the I2C status in
         // RDATA.  Pop the return address off the stack and return
         // to the caller
-        FSM_WRITE_SI570 + 5:
+        FSM_WRITE_I2C + 5:
             if (AMCI_RIDLE) begin
                 fsm_stack <= (fsm_stack >> SMSW);  // pop the stack
                 fsm_state <= fsm_stack;            // return
@@ -302,7 +320,7 @@ always @(posedge clk) begin
         //---------------------------------------------------------------------
         
         // Tell the I2C controller what device register to read from
-        FSM_READ_SI570:
+        FSM_READ_I2C:
             if (AMCI_WIDLE) begin
                 AMCI_WADDR <= AXI_I2C_BASE + CREG_REG_NUM;
                 AMCI_WDATA <= reg_num;
@@ -311,7 +329,7 @@ always @(posedge clk) begin
             end
 
         // Tell the I2C controller to read N bytes of data from the device
-        FSM_READ_SI570 + 1:
+        FSM_READ_I2C + 1:
             if (AMCI_WIDLE) begin
                 AMCI_WADDR <= AXI_I2C_BASE + CREG_READ_LEN;
                 AMCI_WDATA <= byte_count;
@@ -320,13 +338,13 @@ always @(posedge clk) begin
             end
 
         // Wait for the I2C engine to start up
-        FSM_READ_SI570 + 2:
+        FSM_READ_I2C + 2:
             if (AMCI_WIDLE && ~i2c_engine_idle)
                 fsm_state <= fsm_state + 1;
 
         // Now wait for the I2C transaction to complete.  When it does, 
         // fetch the data that was just read
-        FSM_READ_SI570 + 3:
+        FSM_READ_I2C + 3:
             if (i2c_engine_idle) begin
                 AMCI_RADDR <= AXI_I2C_BASE + SREG_I2C_RX_DATA;
                 AMCI_READ  <= 1;
@@ -335,7 +353,7 @@ always @(posedge clk) begin
 
         // Save the device data in "rx_data", and fetch the status
         // of the last I2C transaction
-        FSM_READ_SI570 + 4:
+        FSM_READ_I2C + 4:
             if (AMCI_RIDLE) begin
                 rx_data    <= AMCI_RDATA;
                 AMCI_RADDR <= AXI_I2C_BASE + SREG_I2C_STATUS;
@@ -346,7 +364,7 @@ always @(posedge clk) begin
         // When that read completes, the status from the last I2C
         // transaction is now in AMCI_RDATA.  Pop the return
         // address off the stack and return to the caller
-        FSM_READ_SI570 + 5:
+        FSM_READ_I2C + 5:
             if (AMCI_RIDLE) begin
                 fsm_stack <= (fsm_stack >> SMSW);  // pop the stack
                 fsm_state <= fsm_stack;            // return
