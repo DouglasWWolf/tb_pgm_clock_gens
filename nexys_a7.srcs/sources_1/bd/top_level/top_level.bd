@@ -7,8 +7,7 @@
       "name": "top_level",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2021.1",
-      "validated": "true"
+      "tool_version": "2021.1"
     },
     "design_tree": {
       "source_100mhz": {
@@ -21,17 +20,17 @@
         "i2c_register": ""
       },
       "si570_programmer": {
-        "si570_math": "",
         "si570_programmer": "",
+        "si570_math": "",
         "si570_prog_ctl": ""
       },
       "system_interconnect": "",
       "system_ila": "",
-      "button": "",
       "i2c_emulation": {
-        "i2c_register": "",
-        "emu_iic": ""
-      }
+        "emu_iic": "",
+        "i2c_register": ""
+      },
+      "button": ""
     },
     "interface_ports": {
       "IIC": {
@@ -47,42 +46,12 @@
         "parameters": {
           "ASSOCIATED_RESET": {
             "value": "CPU_RESETN"
-          },
-          "CLK_DOMAIN": {
-            "value": "top_level_CLK100MHZ",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
           }
         }
       },
       "CPU_RESETN": {
         "type": "rst",
-        "direction": "I",
-        "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "POLARITY": {
-            "value": "ACTIVE_LOW",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "BTNC": {
         "direction": "I"
@@ -113,8 +82,8 @@
         "components": {
           "system_clock": {
             "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-            "xci_name": "top_level_clk_wiz_0_0",
-            "xci_path": "ip\\top_level_clk_wiz_0_0\\top_level_clk_wiz_0_0.xci",
+            "xci_name": "top_level_system_clock_0",
+            "xci_path": "ip/top_level_system_clock_0/top_level_system_clock_0.xci",
             "inst_hier_path": "source_100mhz/system_clock",
             "parameters": {
               "CLKOUT1_DRIVES": {
@@ -157,8 +126,8 @@
           },
           "proc_sys_reset": {
             "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-            "xci_name": "top_level_proc_sys_reset_0_1",
-            "xci_path": "ip\\top_level_proc_sys_reset_0_1\\top_level_proc_sys_reset_0_1.xci",
+            "xci_name": "top_level_proc_sys_reset_0",
+            "xci_path": "ip/top_level_proc_sys_reset_0/top_level_proc_sys_reset_0.xci",
             "inst_hier_path": "source_100mhz/proc_sys_reset"
           }
         },
@@ -219,14 +188,14 @@
         "components": {
           "axi_iic": {
             "vlnv": "xilinx.com:ip:axi_iic:2.1",
-            "xci_name": "top_level_axi_iic_0_0",
-            "xci_path": "ip\\top_level_axi_iic_0_0\\top_level_axi_iic_0_0.xci",
+            "xci_name": "top_level_axi_iic_0",
+            "xci_path": "ip/top_level_axi_iic_0/top_level_axi_iic_0.xci",
             "inst_hier_path": "i2c_control/axi_iic"
           },
           "axi_iic_front_end": {
             "vlnv": "xilinx.com:module_ref:axi_iic_fe:1.0",
-            "xci_name": "top_level_axi_iic_fe_0_0",
-            "xci_path": "ip\\top_level_axi_iic_fe_0_0\\top_level_axi_iic_fe_0_0.xci",
+            "xci_name": "top_level_axi_iic_front_end_0",
+            "xci_path": "ip/top_level_axi_iic_front_end_0/top_level_axi_iic_front_end_0.xci",
             "inst_hier_path": "i2c_control/axi_iic_front_end",
             "reference_info": {
               "ref_type": "hdl",
@@ -246,10 +215,6 @@
                   "PROTOCOL": {
                     "value": "AXI4LITE",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
                   },
                   "ID_WIDTH": {
                     "value": "0",
@@ -334,14 +299,6 @@
                   "MAX_BURST_LENGTH": {
                     "value": "1",
                     "value_src": "auto"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
                   }
                 },
                 "address_space_ref": "AXI",
@@ -460,18 +417,6 @@
                   "ASSOCIATED_RESET": {
                     "value": "resetn",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
                   }
                 }
               },
@@ -597,8 +542,8 @@
           },
           "i2c_register": {
             "vlnv": "xilinx.com:module_ref:i2c_register:1.0",
-            "xci_name": "top_level_i2c_register_0_0",
-            "xci_path": "ip\\top_level_i2c_register_0_0\\top_level_i2c_register_0_0.xci",
+            "xci_name": "top_level_i2c_register_0",
+            "xci_path": "ip/top_level_i2c_register_0/top_level_i2c_register_0.xci",
             "inst_hier_path": "i2c_control/i2c_register",
             "reference_info": {
               "ref_type": "hdl",
@@ -618,10 +563,6 @@
                   "PROTOCOL": {
                     "value": "AXI4LITE",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
                   },
                   "ID_WIDTH": {
                     "value": "0",
@@ -706,22 +647,6 @@
                   "MAX_BURST_LENGTH": {
                     "value": "1",
                     "value_src": "auto"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
-                  },
-                  "RUSER_BITS_PER_BYTE": {
-                    "value": "0",
-                    "value_src": "user_prop"
-                  },
-                  "WUSER_BITS_PER_BYTE": {
-                    "value": "0",
-                    "value_src": "user_prop"
                   }
                 },
                 "port_maps": {
@@ -834,18 +759,6 @@
                   "ASSOCIATED_RESET": {
                     "value": "resetn",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
                   }
                 }
               },
@@ -1152,76 +1065,10 @@
           }
         },
         "components": {
-          "si570_math": {
-            "vlnv": "xilinx.com:module_ref:si570_math:1.0",
-            "xci_name": "top_level_si570_math_0_2",
-            "xci_path": "ip\\top_level_si570_math_0_2\\top_level_si570_math_0_2.xci",
-            "inst_hier_path": "si570_programmer/si570_math",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "si570_math",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "ASSOCIATED_RESET": {
-                    "value": "resetn",
-                    "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
-                  }
-                }
-              },
-              "resetn": {
-                "type": "rst",
-                "direction": "I",
-                "parameters": {
-                  "POLARITY": {
-                    "value": "ACTIVE_LOW",
-                    "value_src": "constant"
-                  }
-                }
-              },
-              "old_si570_regs": {
-                "direction": "I",
-                "left": "47",
-                "right": "0"
-              },
-              "new_si570_regs": {
-                "direction": "O",
-                "left": "47",
-                "right": "0"
-              },
-              "fxtal": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "start": {
-                "direction": "I"
-              },
-              "idle": {
-                "direction": "O"
-              }
-            }
-          },
           "si570_programmer": {
             "vlnv": "xilinx.com:module_ref:si570_programmer:1.0",
-            "xci_name": "top_level_si570_programmer_0_0",
-            "xci_path": "ip\\top_level_si570_programmer_0_0\\top_level_si570_programmer_0_0.xci",
+            "xci_name": "top_level_si570_programmer_0",
+            "xci_path": "ip/top_level_si570_programmer_0/top_level_si570_programmer_0.xci",
             "inst_hier_path": "si570_programmer/si570_programmer",
             "reference_info": {
               "ref_type": "hdl",
@@ -1241,10 +1088,6 @@
                   "PROTOCOL": {
                     "value": "AXI4LITE",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
                   },
                   "ID_WIDTH": {
                     "value": "0",
@@ -1329,14 +1172,6 @@
                   "MAX_BURST_LENGTH": {
                     "value": "1",
                     "value_src": "auto"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
                   },
                   "master_id": {
                     "value": "1"
@@ -1458,18 +1293,6 @@
                   "ASSOCIATED_RESET": {
                     "value": "resetn",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
                   }
                 }
               },
@@ -1524,10 +1347,64 @@
               }
             }
           },
+          "si570_math": {
+            "vlnv": "xilinx.com:module_ref:si570_math:1.0",
+            "xci_name": "top_level_si570_math_0",
+            "xci_path": "ip/top_level_si570_math_0/top_level_si570_math_0.xci",
+            "inst_hier_path": "si570_programmer/si570_math",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "si570_math",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "resetn",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "resetn": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "old_si570_regs": {
+                "direction": "I",
+                "left": "47",
+                "right": "0"
+              },
+              "new_si570_regs": {
+                "direction": "O",
+                "left": "47",
+                "right": "0"
+              },
+              "fxtal": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "start": {
+                "direction": "I"
+              },
+              "idle": {
+                "direction": "O"
+              }
+            }
+          },
           "si570_prog_ctl": {
             "vlnv": "xilinx.com:module_ref:si570_prog_ctl:1.0",
-            "xci_name": "top_level_si570_prog_ctl_0_0",
-            "xci_path": "ip\\top_level_si570_prog_ctl_0_0\\top_level_si570_prog_ctl_0_0.xci",
+            "xci_name": "top_level_si570_prog_ctl_0",
+            "xci_path": "ip/top_level_si570_prog_ctl_0/top_level_si570_prog_ctl_0.xci",
             "inst_hier_path": "si570_programmer/si570_prog_ctl",
             "reference_info": {
               "ref_type": "hdl",
@@ -1542,18 +1419,6 @@
                   "ASSOCIATED_RESET": {
                     "value": "resetn",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
                   }
                 }
               },
@@ -1683,16 +1548,16 @@
           "source_100mhz_clk_100mhz": {
             "ports": [
               "clk",
-              "si570_math/clk",
               "si570_programmer/clk",
+              "si570_math/clk",
               "si570_prog_ctl/clk"
             ]
           },
           "source_100mhz_peripheral_aresetn": {
             "ports": [
               "resetn",
-              "si570_math/resetn",
               "si570_programmer/resetn",
+              "si570_math/resetn",
               "si570_prog_ctl/resetn"
             ]
           }
@@ -1700,8 +1565,8 @@
       },
       "system_interconnect": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
-        "xci_name": "top_level_smartconnect_0_1",
-        "xci_path": "ip\\top_level_smartconnect_0_1\\top_level_smartconnect_0_1.xci",
+        "xci_name": "top_level_system_interconnect_0",
+        "xci_path": "ip/top_level_system_interconnect_0/top_level_system_interconnect_0.xci",
         "inst_hier_path": "system_interconnect",
         "parameters": {
           "NUM_MI": {
@@ -1783,8 +1648,8 @@
       },
       "system_ila": {
         "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "top_level_system_ila_0_1",
-        "xci_path": "ip\\top_level_system_ila_0_1\\top_level_system_ila_0_1.xci",
+        "xci_name": "top_level_system_ila_0",
+        "xci_path": "ip/top_level_system_ila_0/top_level_system_ila_0.xci",
         "inst_hier_path": "system_ila",
         "parameters": {
           "C_DATA_DEPTH": {
@@ -1802,43 +1667,6 @@
             "mode": "Monitor",
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-          }
-        }
-      },
-      "button": {
-        "vlnv": "xilinx.com:module_ref:button:1.0",
-        "xci_name": "top_level_button_0_0",
-        "xci_path": "ip\\top_level_button_0_0\\top_level_button_0_0.xci",
-        "inst_hier_path": "button",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "button",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/source_100mhz/system_clock_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "PIN": {
-            "direction": "I"
-          },
-          "Q": {
-            "direction": "O"
           }
         }
       },
@@ -1864,10 +1692,133 @@
           }
         },
         "components": {
+          "emu_iic": {
+            "vlnv": "xilinx.com:module_ref:emu_iic:1.0",
+            "xci_name": "top_level_emu_iic_0",
+            "xci_path": "ip/top_level_emu_iic_0/top_level_emu_iic_0.xci",
+            "inst_hier_path": "i2c_emulation/emu_iic",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "emu_iic",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "resetn",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "resetn": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "idle": {
+                "direction": "O"
+              },
+              "i_I2C_DEV_ADDR": {
+                "direction": "I",
+                "left": "6",
+                "right": "0"
+              },
+              "i_I2C_REG_NUM_LEN": {
+                "direction": "I",
+                "left": "1",
+                "right": "0"
+              },
+              "i_I2C_REG_NUM": {
+                "direction": "I",
+                "left": "15",
+                "right": "0"
+              },
+              "i_I2C_READ_LEN": {
+                "direction": "I",
+                "left": "2",
+                "right": "0"
+              },
+              "i_I2C_READ_LEN_wstrobe": {
+                "direction": "I"
+              },
+              "i_I2C_TX_DATA": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "i_I2C_WRITE_LEN": {
+                "direction": "I",
+                "left": "2",
+                "right": "0"
+              },
+              "i_I2C_WRITE_LEN_wstrobe": {
+                "direction": "I"
+              },
+              "i_I2C_TLIMIT_USEC": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "i_PASSTHRU_ADDR": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "i_PASSTHRU_WDATA": {
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "i_PASSTHRU": {
+                "direction": "I"
+              },
+              "i_PASSTHRU_wstrobe": {
+                "direction": "I"
+              },
+              "o_MODULE_REV": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "o_I2C_STATUS": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "o_I2C_RX_DATA": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "o_I2C_TRANSACT_USEC": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "o_PASSTHRU_RDATA": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "o_PASSTHRU_RESP": {
+                "direction": "O",
+                "left": "1",
+                "right": "0"
+              }
+            }
+          },
           "i2c_register": {
             "vlnv": "xilinx.com:module_ref:i2c_register:1.0",
-            "xci_name": "top_level_i2c_register_0_1",
-            "xci_path": "ip\\top_level_i2c_register_0_1\\top_level_i2c_register_0_1.xci",
+            "xci_name": "top_level_i2c_register_1",
+            "xci_path": "ip/top_level_i2c_register_1/top_level_i2c_register_1.xci",
             "inst_hier_path": "i2c_emulation/i2c_register",
             "reference_info": {
               "ref_type": "hdl",
@@ -1887,10 +1838,6 @@
                   "PROTOCOL": {
                     "value": "AXI4LITE",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
                   },
                   "ID_WIDTH": {
                     "value": "0",
@@ -1975,22 +1922,6 @@
                   "MAX_BURST_LENGTH": {
                     "value": "1",
                     "value_src": "auto"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
-                  },
-                  "RUSER_BITS_PER_BYTE": {
-                    "value": "0",
-                    "value_src": "user_prop"
-                  },
-                  "WUSER_BITS_PER_BYTE": {
-                    "value": "0",
-                    "value_src": "user_prop"
                   }
                 },
                 "port_maps": {
@@ -2103,18 +2034,6 @@
                   "ASSOCIATED_RESET": {
                     "value": "resetn",
                     "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
                   }
                 }
               },
@@ -2216,141 +2135,6 @@
                 "direction": "O"
               }
             }
-          },
-          "emu_iic": {
-            "vlnv": "xilinx.com:module_ref:emu_iic:1.0",
-            "xci_name": "top_level_emu_iic_0_0",
-            "xci_path": "ip\\top_level_emu_iic_0_0\\top_level_emu_iic_0_0.xci",
-            "inst_hier_path": "i2c_emulation/emu_iic",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "emu_iic",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "ASSOCIATED_RESET": {
-                    "value": "resetn",
-                    "value_src": "constant"
-                  },
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/source_100mhz/system_clock_clk_out1",
-                    "value_src": "ip_prop"
-                  }
-                }
-              },
-              "resetn": {
-                "type": "rst",
-                "direction": "I",
-                "parameters": {
-                  "POLARITY": {
-                    "value": "ACTIVE_LOW",
-                    "value_src": "constant"
-                  }
-                }
-              },
-              "idle": {
-                "direction": "O"
-              },
-              "i_I2C_DEV_ADDR": {
-                "direction": "I",
-                "left": "6",
-                "right": "0"
-              },
-              "i_I2C_REG_NUM_LEN": {
-                "direction": "I",
-                "left": "1",
-                "right": "0"
-              },
-              "i_I2C_REG_NUM": {
-                "direction": "I",
-                "left": "15",
-                "right": "0"
-              },
-              "i_I2C_READ_LEN": {
-                "direction": "I",
-                "left": "2",
-                "right": "0"
-              },
-              "i_I2C_READ_LEN_wstrobe": {
-                "direction": "I"
-              },
-              "i_I2C_TX_DATA": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "i_I2C_WRITE_LEN": {
-                "direction": "I",
-                "left": "2",
-                "right": "0"
-              },
-              "i_I2C_WRITE_LEN_wstrobe": {
-                "direction": "I"
-              },
-              "i_I2C_TLIMIT_USEC": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "i_PASSTHRU_ADDR": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              },
-              "i_PASSTHRU_WDATA": {
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "i_PASSTHRU": {
-                "direction": "I"
-              },
-              "i_PASSTHRU_wstrobe": {
-                "direction": "I"
-              },
-              "o_MODULE_REV": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "o_I2C_STATUS": {
-                "direction": "O",
-                "left": "7",
-                "right": "0"
-              },
-              "o_I2C_RX_DATA": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "o_I2C_TRANSACT_USEC": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "o_PASSTHRU_RDATA": {
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "o_PASSTHRU_RESP": {
-                "direction": "O",
-                "left": "1",
-                "right": "0"
-              }
-            }
           }
         },
         "interface_nets": {
@@ -2365,8 +2149,8 @@
           "clk_0_1": {
             "ports": [
               "clk",
-              "i2c_register/clk",
-              "emu_iic/clk"
+              "emu_iic/clk",
+              "i2c_register/clk"
             ]
           },
           "emu_iic_idle": {
@@ -2492,9 +2276,32 @@
           "resetn_0_1": {
             "ports": [
               "resetn",
-              "i2c_register/resetn",
-              "emu_iic/resetn"
+              "emu_iic/resetn",
+              "i2c_register/resetn"
             ]
+          }
+        }
+      },
+      "button": {
+        "vlnv": "xilinx.com:module_ref:button:1.0",
+        "xci_name": "top_level_button_0",
+        "xci_path": "ip/top_level_button_0/top_level_button_0.xci",
+        "inst_hier_path": "button",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "button",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "PIN": {
+            "direction": "I"
+          },
+          "Q": {
+            "direction": "O"
           }
         }
       }
@@ -2584,8 +2391,8 @@
           "system_interconnect/aclk",
           "system_ila/clk",
           "i2c_control/clk",
-          "button/CLK",
-          "i2c_emulation/clk"
+          "i2c_emulation/clk",
+          "button/CLK"
         ]
       },
       "source_100mhz_peripheral_aresetn": {

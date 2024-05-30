@@ -256,7 +256,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5cf5e709</spirit:value>
+            <spirit:value>d73dbd67</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -269,7 +269,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5cf5e709</spirit:value>
+            <spirit:value>d73dbd67</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -983,7 +983,7 @@
       <spirit:file>
         <spirit:name>xgui/axi_iic_fe_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b73f0b95</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_70892a3c</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1020,7 +1020,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-02-07T05:30:34Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-05-30T08:34:42Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>

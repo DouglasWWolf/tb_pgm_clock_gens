@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="55" Path="C:/fpga/tb_pgm_clock_gens/nexys_a7.xpr">
+<Project Version="7" Minor="55" Path="/fpga/tb_pgm_clock_gens/nexys_a7.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0eb07f27e91c4005a331ad758b205f5f"/>
@@ -167,38 +167,20 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_i2c_register_0_0/top_level_i2c_register_0_0.xci">
-          <Proxy FileSetName="top_level_i2c_register_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_axi_iic_0/top_level_axi_iic_0.xci">
+          <Proxy FileSetName="top_level_axi_iic_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_axi_iic_fe_0_0/top_level_axi_iic_fe_0_0.xci">
-          <Proxy FileSetName="top_level_axi_iic_fe_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_proc_sys_reset_0/top_level_proc_sys_reset_0.xci">
+          <Proxy FileSetName="top_level_proc_sys_reset_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_si570_math_0_2/top_level_si570_math_0_2.xci">
-          <Proxy FileSetName="top_level_si570_math_0_2"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_system_clock_0/top_level_system_clock_0.xci">
+          <Proxy FileSetName="top_level_system_clock_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_button_0_0/top_level_button_0_0.xci">
-          <Proxy FileSetName="top_level_button_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_system_interconnect_0/top_level_system_interconnect_0.xci">
+          <Proxy FileSetName="top_level_system_interconnect_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_emu_iic_0_0/top_level_emu_iic_0_0.xci">
-          <Proxy FileSetName="top_level_emu_iic_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_system_ila_0_1/top_level_system_ila_0_1.xci">
-          <Proxy FileSetName="top_level_system_ila_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_si570_programmer_0_0/top_level_si570_programmer_0_0.xci">
-          <Proxy FileSetName="top_level_si570_programmer_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_si570_prog_ctl_0_0/top_level_si570_prog_ctl_0_0.xci">
-          <Proxy FileSetName="top_level_si570_prog_ctl_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_clk_wiz_0_0/top_level_clk_wiz_0_0.xci">
-          <Proxy FileSetName="top_level_clk_wiz_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_proc_sys_reset_0_1/top_level_proc_sys_reset_0_1.xci">
-          <Proxy FileSetName="top_level_proc_sys_reset_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_axi_iic_0_0/top_level_axi_iic_0_0.xci">
-          <Proxy FileSetName="top_level_axi_iic_0_0"/>
+        <CompFileExtendedInfo CompFileName="top_level.bd" FileRelPathName="ip/top_level_system_ila_0/top_level_system_ila_0.xci">
+          <Proxy FileSetName="top_level_system_ila_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/top_level/hdl/top_level_wrapper.v">
@@ -248,69 +230,33 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_iic_0_0" RelGenDir="$PGENDIR/top_level_axi_iic_0_0">
+    <FileSet Name="top_level_system_interconnect_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_system_interconnect_0" RelGenDir="$PGENDIR/top_level_system_interconnect_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_axi_iic_0_0"/>
+        <Option Name="TopModule" Val="top_level_system_interconnect_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_clk_wiz_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_clk_wiz_0_0" RelGenDir="$PGENDIR/top_level_clk_wiz_0_0">
+    <FileSet Name="top_level_system_ila_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_system_ila_0" RelGenDir="$PGENDIR/top_level_system_ila_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_clk_wiz_0_0"/>
+        <Option Name="TopModule" Val="top_level_system_ila_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_i2c_register_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_i2c_register_0_0" RelGenDir="$PGENDIR/top_level_i2c_register_0_0">
+    <FileSet Name="top_level_proc_sys_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_proc_sys_reset_0" RelGenDir="$PGENDIR/top_level_proc_sys_reset_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_i2c_register_0_0"/>
+        <Option Name="TopModule" Val="top_level_proc_sys_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_axi_iic_fe_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_iic_fe_0_0" RelGenDir="$PGENDIR/top_level_axi_iic_fe_0_0">
+    <FileSet Name="top_level_axi_iic_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_axi_iic_0" RelGenDir="$PGENDIR/top_level_axi_iic_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_axi_iic_fe_0_0"/>
+        <Option Name="TopModule" Val="top_level_axi_iic_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_level_proc_sys_reset_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_proc_sys_reset_0_1" RelGenDir="$PGENDIR/top_level_proc_sys_reset_0_1">
+    <FileSet Name="top_level_system_clock_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_system_clock_0" RelGenDir="$PGENDIR/top_level_system_clock_0">
       <Config>
-        <Option Name="TopModule" Val="top_level_proc_sys_reset_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_button_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_button_0_0" RelGenDir="$PGENDIR/top_level_button_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_button_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_si570_math_0_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_si570_math_0_2" RelGenDir="$PGENDIR/top_level_si570_math_0_2">
-      <Config>
-        <Option Name="TopModule" Val="top_level_si570_math_0_2"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_emu_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_emu_iic_0_0" RelGenDir="$PGENDIR/top_level_emu_iic_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_emu_iic_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_si570_programmer_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_si570_programmer_0_0" RelGenDir="$PGENDIR/top_level_si570_programmer_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_si570_programmer_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_si570_prog_ctl_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_si570_prog_ctl_0_0" RelGenDir="$PGENDIR/top_level_si570_prog_ctl_0_0">
-      <Config>
-        <Option Name="TopModule" Val="top_level_si570_prog_ctl_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="top_level_system_ila_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_level_system_ila_0_1" RelGenDir="$PGENDIR/top_level_system_ila_0_1">
-      <Config>
-        <Option Name="TopModule" Val="top_level_system_ila_0_1"/>
+        <Option Name="TopModule" Val="top_level_system_clock_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -326,15 +272,21 @@
     <Simulator Name="Questa">
       <Option Name="Description" Val="Questa Advanced Simulator"/>
     </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="Xcelium">
+      <Option Name="Description" Val="Xcelium Parallel Simulator"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
     </Simulator>
-    <Simulator Name="ActiveHDL">
-      <Option Name="Description" Val="Active-HDL Simulator"/>
-    </Simulator>
   </Simulators>
   <Runs Version="1" Minor="15">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../nexys_a7/nexys_a7.srcs/utils_1/imports/synth_1">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../home/wolf/C:/fpga/nexys_a7/nexys_a7.srcs/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -343,7 +295,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_iic_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_axi_iic_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_iic_0_0_synth_1">
+    <Run Id="top_level_system_interconnect_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_system_interconnect_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_interconnect_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_interconnect_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -352,7 +304,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_clk_wiz_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_clk_wiz_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_clk_wiz_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wiz_0_0_synth_1">
+    <Run Id="top_level_system_ila_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_system_ila_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_ila_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_ila_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -361,7 +313,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_i2c_register_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_i2c_register_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_i2c_register_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_i2c_register_0_0_synth_1">
+    <Run Id="top_level_proc_sys_reset_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_proc_sys_reset_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_proc_sys_reset_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -370,7 +322,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axi_iic_fe_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_iic_fe_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_axi_iic_fe_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_iic_fe_0_0_synth_1">
+    <Run Id="top_level_axi_iic_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_axi_iic_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_axi_iic_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_iic_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -379,7 +331,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_proc_sys_reset_0_1_synth_1" Type="Ft3:Synth" SrcSet="top_level_proc_sys_reset_0_1" Part="xc7a100tcsg324-1" ConstrsSet="top_level_proc_sys_reset_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_1_synth_1">
+    <Run Id="top_level_system_clock_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_system_clock_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_clock_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_clock_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -388,61 +340,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_button_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_button_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_button_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_button_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_si570_math_0_2_synth_1" Type="Ft3:Synth" SrcSet="top_level_si570_math_0_2" Part="xc7a100tcsg324-1" ConstrsSet="top_level_si570_math_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_si570_math_0_2_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_emu_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_emu_iic_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_emu_iic_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_emu_iic_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_si570_programmer_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_si570_programmer_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_si570_programmer_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_si570_programmer_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_si570_prog_ctl_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_level_si570_prog_ctl_0_0" Part="xc7a100tcsg324-1" ConstrsSet="top_level_si570_prog_ctl_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_si570_prog_ctl_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_system_ila_0_1_synth_1" Type="Ft3:Synth" SrcSet="top_level_system_ila_0_1" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_ila_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_ila_0_1_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../nexys_a7/nexys_a7.srcs/utils_1/imports/impl_1">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../home/wolf/C:/fpga/nexys_a7/nexys_a7.srcs/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -459,7 +357,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_axi_iic_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_iic_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_iic_0_0_impl_1">
+    <Run Id="top_level_system_interconnect_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_interconnect_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_system_interconnect_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_interconnect_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -476,7 +374,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_clk_wiz_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_clk_wiz_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_clk_wiz_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_clk_wiz_0_0_impl_1">
+    <Run Id="top_level_system_ila_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_ila_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_system_ila_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_ila_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -493,7 +391,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_i2c_register_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_i2c_register_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_i2c_register_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_i2c_register_0_0_impl_1">
+    <Run Id="top_level_proc_sys_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_proc_sys_reset_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_proc_sys_reset_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -510,7 +408,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_axi_iic_fe_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_axi_iic_fe_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_iic_fe_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_iic_fe_0_0_impl_1">
+    <Run Id="top_level_axi_iic_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_axi_iic_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_axi_iic_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_axi_iic_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -527,109 +425,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_level_proc_sys_reset_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_proc_sys_reset_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_proc_sys_reset_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_proc_sys_reset_0_1_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_button_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_button_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_button_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_button_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_si570_math_0_2_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_si570_math_0_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_si570_math_0_2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_si570_math_0_2_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_emu_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_emu_iic_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_emu_iic_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_emu_iic_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_si570_programmer_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_si570_programmer_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_si570_programmer_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_si570_programmer_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_si570_prog_ctl_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_si570_prog_ctl_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_si570_prog_ctl_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_si570_prog_ctl_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="top_level_system_ila_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_ila_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_system_ila_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_ila_0_1_impl_1">
+    <Run Id="top_level_system_clock_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="top_level_system_clock_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_level_system_clock_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_level_system_clock_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
